@@ -21,7 +21,7 @@ async function main () {
   try {
     const url = core.getInput('yq-url')
     const version = core.getInput('yq-version')
-    const platform = os.platform()
+    const platform = os.platform().toLowerCase()
     let arch = os.arch()
     if (arch === 'x64') {
       arch = 'amd64'
@@ -38,10 +38,11 @@ async function main () {
       const rendered = url.replace(/\{(\w+?)\}/g, (a, match) => {
         return context[match] || ''
       })
-
+      core.debug(`downloading YQ from ${rendered}`)
       const downloadPath = await cache.downloadTool(rendered)
       toolPath = await cache.cacheFile(downloadPath, 'yq', 'yq', version)
     }
+    core.debug(`YQ ${version} cached in ${toolPath}`)
 
     await chmod(path.join(toolPath, 'yq'), 0o755) // just in case we haven't preserved the executable bit
     core.addPath(toolPath)
