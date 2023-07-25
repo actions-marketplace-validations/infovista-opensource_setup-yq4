@@ -20,7 +20,7 @@ if (require.main === module) {
 async function main () {
   try {
     const url = core.getInput('yq-url')
-    const version = core.getInput('yq-version')
+    let version = core.getInput('yq-version')
     if (!version.startsWith('v')) version = `v${version}`
     const platform = os.platform().toLowerCase()
     let arch = os.arch()
