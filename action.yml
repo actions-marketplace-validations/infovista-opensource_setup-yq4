@@ -1,8 +1,8 @@
 name: 'setup-yq4'
-description: 'Install a version of the mythical YQ tool'
+description: 'Installs the mythical YQ tool'
 inputs:
-  yq-version:  # id of input
-    description: 'What version of YQ to install'
+  yq-version:
+    description: 'Which version of YQ to install'
     required: false
     default: '4.34.2'
   yq-url:
@@ -12,5 +12,5 @@ inputs:
 runs:
   using: 'node16'
   main: 'dist/index.js'
-icon: book-open
-color: '#FFFF00'
+icon: copy
+color: purple
