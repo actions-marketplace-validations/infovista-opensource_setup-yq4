@@ -2,7 +2,7 @@ name: 'setup-yq4'
 description: 'Installs the mythical YQ tool'
 inputs:
   yq-version:
-    description: 'Which version of YQ to install'
+    description: 'Which version of YQ to install. Can be specified without the initial "v"'
     required: false
     default: '4.34.2'
   yq-url:
