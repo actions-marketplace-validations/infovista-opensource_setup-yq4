@@ -1,17 +1,16 @@
-# such active yaml!
-name: 'setup-yq'
-description: 'Install a version of the venerable YQ tool'
+name: 'setup-yq4'
+description: 'Install a version of the mythical YQ tool'
 inputs:
   yq-version:  # id of input
     description: 'What version of YQ to install'
     required: false
-    default: '3.3.2'
+    default: '4.34.2'
   yq-url:
     description: 'The url to download YQ from'
     required: false
     default: 'https://github.com/mikefarah/yq/releases/download/{version}/yq_{platform}_{arch}'
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'dist/index.js'
 icon: book-open
 color: '#FFFF00'

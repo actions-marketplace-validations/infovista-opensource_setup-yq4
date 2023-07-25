@@ -1,20 +1,25 @@
 {
-  "name": "@chrisdickinson/setup-yq",
-  "version": "1.0.1",
+  "name": "@infovista-opensource/setup-yq4",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "build": "ncc build index.js",
+    "package": "ncc build -s -m index.js -s --license licenses.txt",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "Chris Dickinson <chris@neversaw.us> (http://neversaw.us/)",
+  "author": "Daniele Franceschi <daniele.franceschi@infovista.com>",
   "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/infovista-opensource/setup-yq4.git"
+  },
   "dependencies": {
-    "@actions/core": "^1.2.6",
-    "@actions/tool-cache": "^1.6.1"
+    "@actions/core": "^1.10.0",
+    "@actions/tool-cache": "^2.0.1"
   },
   "devDependencies": {
-    "@zeit/ncc": "^0.22.3"
+    "@vercel/ncc": "^0.36.1"
   }
 }

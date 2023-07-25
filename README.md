@@ -1,8 +1,8 @@
 # setup-yq
 
-Sets up [YQ][ref-yq], yet-another-markup-language-query-er, for use in YOUR github action workflow. (And it caches it, too!)
+Sets up [YQ](https://github.com/mikefarah/yq) for use in your CI jobs. (And it caches it, too!)
 
-**NB: This version of YQ purposefully diverges from JQ's argument format.**
+By default, it installs `yq==4.34`.
 
 ## Usage
 
@@ -20,7 +20,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - uses: chrisdickinson/setup-yq@latest
+    - uses: infovista-opensource/setup-yq4@latest
     - name: Show folks how to run YQ:
       run: |
         yq --help
@@ -32,8 +32,10 @@ jobs:
 After you've made changes, you must run `npm run build` and commit the
 `dist/index.js`, or else your changes won't take effect!
 
+## History
+
+- Forked from https://github.com/chrisdickinson/setup-yq - thanks @chrisdickinson !
+
 ## License
 
 Apache-2.0
-
-[ref-yq]: https://github.com/mikefarah/yq
